@@ -54,13 +54,13 @@ export function readSessionCookie(req) {
 
 export function setSessionCookie(res, token) {
   res.cookie(SESSION_COOKIE, token, {
-    httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict',
+    httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
     maxAge: SESSION_DURATION, path: '/api'
   });
 }
 
 export function clearSessionCookie(res) {
-  res.clearCookie(SESSION_COOKIE, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', path: '/api' });
+  res.clearCookie(SESSION_COOKIE, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', path: '/api' });
 }
 
 export async function registerAccount({ name, email, password }) {

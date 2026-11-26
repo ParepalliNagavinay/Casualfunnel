@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import rateLimit from 'express-rate-limit';
+import * as controller from '../controllers/eventController.js';
+import { requireAuth } from '../middleware/requireAuth.js';
+const router = Router();
+const ingestionLimit = rateLimit({ windowMs: 60_000, limit: 120, standardHeaders: 'draft-7', legacyHeaders: false, message: { success: false, error: { message: 'Event rate limit exceeded. Try again shortly.' } } });
+router.post('/events', ingestionLimit, controller.ingest);
+router.get('/health', controller.health);
+router.get('/sessions', requireAuth, controller.sessions);
+router.get('/sessions/:sessionId/events', requireAuth, controller.sessionEvents);
+router.get('/heatmap', requireAuth, controller.heatmap);
+router.get('/overview', requireAuth, controller.overview);
+export default router;

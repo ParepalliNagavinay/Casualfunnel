@@ -1,0 +1,4 @@
+import { Activity, AlertCircle, RefreshCw } from 'lucide-react';
+export function Loading({ label = 'Loading analytics' }) { return <div className="state" role="status"><span className="spinner"/><span>{label}…</span></div>; }
+export function Empty({ title = 'No activity yet', children = 'Events will appear here once your tracker is installed and visitors interact with your site.' }) { return <div className="empty"><span className="empty-icon"><Activity size={21}/></span><h3>{title}</h3><p>{children}</p></div>; }
+export function ErrorState({ error, retry }) { return <div className="error-state"><AlertCircle size={20}/><div><strong>We couldn’t load this data.</strong><p>{error || 'Check that the API is running and try again.'}</p>{retry && <button className="text-button" onClick={retry}><RefreshCw size={14}/> Try again</button>}</div></div>; }

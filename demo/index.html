@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f2">
+  <title>Form & Field — Everyday essentials</title>
+  <link rel="stylesheet" href="/demo/styles.css">
+  <link rel="stylesheet" href="/demo/catalog.css">
+  <script src="/tracker/insightflow.js" data-api-url="/api/events" defer></script>
+  <script src="/demo/products.js" defer></script>
+  <script src="/demo/store.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Complimentary shipping on orders over $75</div>
+  <header class="nav" id="top">
+    <a class="brand" href="#top">form<span>&</span>field</a>
+    <nav aria-label="Main navigation"><a href="#collection">Shop</a><a href="#story">Our story</a></nav>
+    <button class="bag" type="button" data-open-cart aria-controls="shopping-bag" aria-expanded="false">
+      Bag <span class="bag-count" data-bag-count aria-live="polite">0</span>
+    </button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">Made for the everyday</p><h1>Good things.<br>Made to last.</h1><p>Thoughtful objects for slower mornings, better rituals, and a home that feels like you.</p><a class="button" href="#collection">Explore the collection <span>↗</span></a><div class="hero-note">Small batches · considered materials · made with care</div></div>
+      <div class="hero-image" aria-label="Hand-finished ceramic vases"><div class="sun"></div><div class="vase vase-one"></div><div class="vase vase-two"></div><span>THE SUNDAY VASE · $48</span></div>
+    </section>
+    <section class="collection" id="collection">
+      <div class="section-heading"><div><p class="eyebrow">A few favorites</p><h2>Objects for daily living</h2><p class="catalog-count" data-catalog-count>50 considered essentials</p></div><a href="#product-grid">Browse all products ↓</a></div>
+      <div class="catalog-tools"><label class="search-field"><span class="sr-only">Search products</span><span aria-hidden="true">⌕</span><input type="search" data-product-search placeholder="Search the collection"></label><label class="filter-field"><span class="sr-only">Filter by category</span><select data-category-filter><option value="all">All categories</option></select></label></div>
+      <div class="products" id="product-grid" data-product-grid aria-live="polite"></div>
+      <p class="no-products" data-no-products hidden>No products match your search. Try another name or category.</p>
+    </section>
+    <section class="story" id="story"><p class="eyebrow">A little less, a little better</p><h2>Made to be used.<br>Made to be kept.</h2><p>We make small things that make everyday life feel special. Thoughtful by design, crafted with care, and always a joy to come home to.</p><a class="button light" href="#collection">Find your favorite <span>↗</span></a></section>
+  </main>
+  <footer><a class="brand" href="#top">form<span>&</span>field</a><span>Objects with a little more intention.</span><span>© 2026 Form & Field</span></footer>
+
+  <div class="cart-backdrop" data-cart-backdrop hidden></div>
+  <aside class="cart-drawer" id="shopping-bag" aria-label="Shopping bag" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow">Your selection</p><h2>Your bag <span data-cart-heading-count>(0)</span></h2></div><button class="close-cart" type="button" data-close-cart aria-label="Close shopping bag">×</button></div>
+    <div class="cart-items" data-cart-items></div>
+    <div class="cart-empty" data-cart-empty><div class="cart-empty-mark">✳</div><h3>Your bag is taking a little rest.</h3><p>Find something thoughtful for home and everyday life.</p><button type="button" class="continue-shopping" data-close-cart>Continue shopping</button></div>
+    <div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong data-cart-subtotal>$0.00</strong></div><p>Shipping and taxes calculated at checkout.</p><div class="demo-checkout-note">This is a demo storefront. Checkout is not enabled.</div></div>
+  </aside>
+  <div class="store-toast" data-store-toast role="status" aria-live="polite"></div>
+</body>
+</html>
